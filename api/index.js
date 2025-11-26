@@ -11,21 +11,21 @@ dotenv.config();
 import cors from "cors";
 
 
-app.use(cors());    
 
 mongoose
-  .connect(process.env.MONGO)
-  .then(() => {
-    console.log('Connected to MongoDB!');
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+.connect(process.env.MONGO)
+.then(() => {
+  console.log('Connected to MongoDB!');
+})
+.catch((err) => {
+  console.log(err);
+});
 
-  const __dirname = path.resolve();
+const __dirname = path.resolve();
 
 const app = express();
 
+app.use(cors());    
 app.use(express.json());
 
 app.use(cookieParser());
